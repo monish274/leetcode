@@ -1,0 +1,20 @@
+void merge(int* nums1, int nums1Size, int m, int* nums2, int nums2Size, int n){
+
+    //start from last index of num1
+
+    int ptr=(n--)+(m--)-1;
+
+    while (ptr>=0){
+
+        if (m>=0 && n>=0){
+            if (nums1[m] > nums2[n]) nums1[ptr--] = nums1[m--];
+            else  nums1[ptr--] = nums2[n--];
+        }
+        else if (m<0) nums1[ptr--] = nums2[n--];
+        else nums1[ptr--] = nums1[m--];
+        
+    }
+
+
+
+}
